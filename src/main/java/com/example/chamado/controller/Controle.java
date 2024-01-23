@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.chamado.model.Chamado;
 import com.example.chamado.repository.Repositorio;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -17,6 +18,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 public class Controle {
+
+    @Autowired
+    private Repositorio acao;
+
+    @PostMapping("/")
+    public Chamado abrirChamado(@RequestBody Chamado c){
+        return acao.save(c);
+    }
 
     @GetMapping("/")
     public String teste() {
