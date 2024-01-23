@@ -25,6 +25,7 @@ public class Chamado {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long protocolo;
     private String servidor;
+    private String setor;
     private String descricao;
     private String urgencia;
     private Date data;
